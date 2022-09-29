@@ -1,0 +1,40 @@
+html,
+body {
+    height: 100%;
+    height: calc(100% - constant(safe-area-inset-bottom) / 2);
+    height: calc(100% - env(safe-area-inset-bottom) / 2);
+}
+
+body {
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('iconfont.woff2?t=1662692614926') format('woff2'),
+        url('iconfont.woff?t=1662692614926') format('woff'),
+        url('iconfont.ttf?t=1662692614926') format('truetype');
+}
+
+@supports (padding-bottom:constant(safe-area-inset-bottom)) {
+    body {
+        padding-bottom: constant(safe-area-inset-bottom);
+        overflow: hidden;
+    }
+}
+
+@supports (padding-bottom:env(safe-area-inset-bottom)) {
+    body {
+        padding-bottom: env(safe-area-inset-bottom);
+        overflow: hidden;
+    }
+}
+#root {
+    display: flex;
+    height: 100%;
+}
+
+#article img,
+#article video {
+    width: 100%;
+}
